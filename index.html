@@ -620,7 +620,7 @@
   })();
 
   // WhatsApp submit
-  var WA_NUMBER="525665012116"; // Número comercial Cantec (WhatsApp) — +52 5665012116
+  var WA_NUMBER="5215665012116"; // Número comercial Cantec (WhatsApp MX, con "1" tras el 52) — +52 5665012116
   document.getElementById('quoteForm').addEventListener('submit',function(e){
     e.preventDefault();
     var f=e.target;
@@ -630,7 +630,7 @@
             "*Nombre:* "+encodeURIComponent(nombre)+"%0A"+
             "*Auto:* "+encodeURIComponent(marca+" "+anio)+"%0A"+
             "*Teléfono:* "+encodeURIComponent(tel);
-    var url="https://wa.me/"+WA_NUMBER+"?text="+msg;
+    var url="https://api.whatsapp.com/send/?phone="+WA_NUMBER+"&text="+msg;
     window.open(url,"_blank");
   });
 
