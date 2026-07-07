@@ -46,7 +46,7 @@
 
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
   body{
     margin:0;background:var(--ground);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -188,6 +188,46 @@
   /* reveal */
   .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
   .rv.in{opacity:1;transform:none}
+
+  /* ============ MOVIMIENTO / ANIMACIONES ============ */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  @keyframes fadeInRight{from{opacity:0;transform:translateY(26px) scale(.98)}to{opacity:1;transform:none}}
+  @keyframes glowPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+  @keyframes ctaPulse{0%,100%{box-shadow:0 8px 20px -8px color-mix(in srgb,var(--signal) 55%,transparent)}50%{box-shadow:0 12px 30px -6px color-mix(in srgb,var(--signal) 90%,transparent)}}
+  @keyframes shineSweep{0%{left:-60%}60%,100%{left:130%}}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+  /* entrada del hero al cargar */
+  .eyebrow{animation:fadeUp .6s ease both}
+  .rating{animation:fadeUp .6s .06s ease both}
+  .hero h1{animation:fadeUp .75s .14s ease both}
+  .hero p.lead{animation:fadeUp .75s .26s ease both}
+  .hero-stats{animation:fadeUp .75s .38s ease both}
+  .quote{animation:fadeInRight .85s .2s cubic-bezier(.2,.7,.2,1) both}
+
+  /* glow naranja "respirando" */
+  .hero::before{animation:glowPulse 7s ease-in-out infinite}
+
+  /* pulso de atencion en el CTA principal */
+  .submit{animation:ctaPulse 2.6s ease-in-out infinite}
+  .mcta a{animation:ctaPulse 2.6s ease-in-out infinite}
+
+  /* brillo al pasar el mouse por los botones */
+  .submit,.nav-cta,.final .fcta,.cov-panel .pcta{position:relative;overflow:hidden}
+  .submit::after,.nav-cta::after,.final .fcta::after,.cov-panel .pcta::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);pointer-events:none}
+  .submit:hover::after,.nav-cta:hover::after,.final .fcta:hover::after,.cov-panel .pcta:hover::after{animation:shineSweep .8s ease}
+
+  /* flotar suave en el boton fijo de WhatsApp (movil) */
+  .mcta a svg{animation:floaty 2.4s ease-in-out infinite}
+
+  /* stagger de secciones al hacer scroll */
+  .steps .rv:nth-child(2){transition-delay:.1s}
+  .steps .rv:nth-child(3){transition-delay:.2s}
+  .benefits .rv:nth-child(2){transition-delay:.08s}
+  .benefits .rv:nth-child(3){transition-delay:.16s}
+  .benefits .rv:nth-child(4){transition-delay:.24s}
+  .tst .rv:nth-child(2){transition-delay:.1s}
+  .tst .rv:nth-child(3){transition-delay:.2s}
 
   /* ============ PROMO BAR ============ */
   .promo{background:var(--petrol-700);color:#EAF6F4;font-size:.86rem;font-weight:600;text-align:center;padding:9px 16px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
@@ -381,7 +421,7 @@
 <section class="blk">
   <div class="wrap">
     <div class="kicker">Por qué contratar con nosotros</div>
-    <h2 class="title">Menos vueltas, más protección para tu auto.</h2>
+    <h2 class="title rv">Menos vueltas, más protección para tu auto.</h2>
     <div class="benefits">
       <div class="bcard rv">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
@@ -415,19 +455,19 @@
 <section class="blk" style="padding-top:0">
   <div class="wrap">
     <div class="kicker">Cómo funciona</div>
-    <h2 class="title">Tres pasos y listo.</h2>
+    <h2 class="title rv">Tres pasos y listo.</h2>
     <div class="steps">
-      <div class="step">
+      <div class="step rv">
         <div class="n"></div>
         <h3>Llena el formulario</h3>
         <p>Tu nombre, la marca y el año de tu auto, y un teléfono de contacto. Nada más.</p>
       </div>
-      <div class="step">
+      <div class="step rv">
         <div class="n"></div>
         <h3>Recibe tu cotización</h3>
         <p>Un asesor te escribe por WhatsApp con las mejores opciones de cobertura y precio para tu vehículo.</p>
       </div>
-      <div class="step">
+      <div class="step rv">
         <div class="n"></div>
         <h3>Contrata y circula</h3>
         <p>Eliges tu plan, pagas a MSI si quieres, y quedas cubierto. Tu póliza llega a tu correo.</p>
@@ -440,7 +480,7 @@
 <section class="blk" style="padding-top:0">
   <div class="wrap">
     <div class="kicker">Lo que incluye</div>
-    <h2 class="title">Cobertura completa, sin sorpresas.</h2>
+    <h2 class="title rv">Cobertura completa, sin sorpresas.</h2>
     <div class="cov-grid">
       <ul class="cov-list">
         <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Daños materiales</b><span>Choques, volcaduras y daños a tu vehículo.</span></div></li>
@@ -449,7 +489,7 @@
         <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Gastos médicos a ocupantes</b><span>Para ti y tus acompañantes.</span></div></li>
         <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Asistencia en el camino 24/7</b><span>Grúa, paso de corriente y auxilio vial.</span></div></li>
       </ul>
-      <div class="cov-panel">
+      <div class="cov-panel rv">
         <div class="pk">Oferta del mes</div>
         <div class="big tnum">Hasta 35%*</div>
         <p>de ahorro frente a tu póliza actual, y hasta 12 meses sin intereses para pagar. Cotiza hoy y compruébalo.</p>
@@ -466,7 +506,7 @@
 <section class="blk" style="padding-top:0">
   <div class="wrap">
     <div class="kicker">Lo que dicen nuestros clientes</div>
-    <h2 class="title">Conductores que ya ahorran.</h2>
+    <h2 class="title rv">Conductores que ya ahorran.</h2>
     <div class="tst">
       <div class="tcard rv">
         <span class="stars">
@@ -505,7 +545,7 @@
 <section class="blk" style="padding-top:0">
   <div class="wrap">
     <div class="kicker">Preguntas frecuentes</div>
-    <h2 class="title">Lo que la gente nos pregunta.</h2>
+    <h2 class="title rv">Lo que la gente nos pregunta.</h2>
     <div class="faq">
       <details><summary>¿Cotizar tiene algún costo?<span class="pm"></span></summary><div class="a">No. La cotización es totalmente gratis y sin compromiso. Solo pagas si decides contratar tu póliza.</div></details>
       <details><summary>¿Qué necesito para cotizar?<span class="pm"></span></summary><div class="a">Solo tu nombre, la marca y el año de tu auto, y un teléfono de contacto. Con eso un asesor te arma tu propuesta.</div></details>
