@@ -147,8 +147,8 @@
   .cov-list li{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--line);align-items:flex-start}
   .cov-list li:last-child{border-bottom:0}
   .cov-list .ck{flex:none;width:26px;height:26px;border-radius:50%;background:color-mix(in srgb,var(--good) 16%,transparent);color:var(--good);display:grid;place-items:center;margin-top:1px}
-  .cov-list b{display:block;font-size:1rem}
-  .cov-list span{color:var(--muted);font-size:.9rem}
+  .cov-list .ct{font-size:.98rem;line-height:1.5;color:var(--ink)}
+  .cov-list .ct b{color:var(--petrol);font-weight:700}
   .cov-panel{background:var(--petrol);color:#EAF6F4;border-radius:20px;padding:36px 32px;box-shadow:var(--shadow);position:relative;overflow:hidden}
   :root[data-theme="dark"] .cov-panel,@media(prefers-color-scheme:dark){}
   .cov-panel::after{content:"";position:absolute;right:-40px;bottom:-40px;width:180px;height:180px;border-radius:50%;background:color-mix(in srgb,var(--signal) 30%,transparent);filter:blur(10px);opacity:.5}
@@ -546,15 +546,16 @@
 <!-- COVERAGE -->
 <section class="blk" style="padding-top:0">
   <div class="wrap">
-    <div class="kicker">Lo que incluye</div>
-    <h2 class="title rv">Cobertura completa, sin sorpresas.</h2>
+    <div class="kicker">Coberturas</div>
+    <h2 class="title rv">Todo lo que protege tu Seguro de Auto GNP.</h2>
+    <p class="intro">Dependiendo del plan que contrates, con el Seguro de Auto GNP tienes las siguientes coberturas:</p>
     <div class="cov-grid">
       <ul class="cov-list">
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Daños materiales</b><span>Choques, volcaduras y daños a tu vehículo.</span></div></li>
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Robo total</b><span>Protección por el robo de tu auto.</span></div></li>
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Responsabilidad civil</b><span>Daños a terceros en sus bienes y personas.</span></div></li>
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Gastos médicos a ocupantes</b><span>Para ti y tus acompañantes.</span></div></li>
-        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Asistencia en el camino 24/7</b><span>Grúa, paso de corriente y auxilio vial.</span></div></li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div class="ct">Respaldo por <b>Gastos Médicos</b> que requieras como conductor y para los ocupantes del vehículo.</div></li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div class="ct">Con <b>Protección Legal</b>, expide la fianza correspondiente para garantizar tu libertad y la liberación de tu auto en caso de un juicio civil.</div></li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div class="ct">Te cubre la <b>Responsabilidad Civil</b> si conduces otro auto, aún cuando este no se encuentre asegurado.</div></li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div class="ct">Con <b>Club GNP Autos</b>, personal calificado te ayudará en caso de requerir grúa, paso de corriente, envío de combustible, cambio de llanta o servicio de cerrajería.</div></li>
+        <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span><div class="ct">Reparación de <b>Daños materiales</b> ocasionados a tu vehículo por incendio, inundación, terremoto o colisión.</div></li>
       </ul>
       <div class="cov-panel rv">
         <div class="pk">Oferta del mes</div>
