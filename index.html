@@ -301,6 +301,61 @@
     --shadow:0 1px 2px rgba(13,26,46,.05),0 12px 32px -12px rgba(13,26,46,.20);
     --cantec-logo:var(--cantec-black);
   }
+
+  /* ============ AJUSTES RESPONSIVE MÓVIL ============ */
+  @media(max-width:600px){
+    .wrap{padding:0 16px}
+
+    /* header: aligerar, evitar desbordes */
+    .nav{height:58px;gap:10px}
+    .brand-lockup{gap:9px;min-width:0;flex-shrink:1}
+    .brand-sep{display:none}
+    .gnp-logo .inter{font-size:.96rem}
+    .gnp-logo .gword{font-size:.9rem}
+    .cantec-lock .cantec-img{height:23px;width:100px}
+    .nav-cta{flex:none;padding:9px 12px;font-size:.85rem}
+
+    /* hero */
+    .hero-grid{padding:30px 0 38px;gap:24px}
+    .hero h1{font-size:clamp(1.95rem,7.6vw,2.55rem)}
+    .hero p.lead{font-size:1.02rem;margin:15px 0 20px}
+    .eyebrow{margin-bottom:13px}
+    .hero-stats{gap:14px 20px}
+    .hero-stats .s b{font-size:1.4rem}
+
+    /* formulario */
+    .quote{padding:20px 17px;border-radius:16px}
+    .quote h2{font-size:1.32rem}
+    .row2{gap:10px}
+
+    /* secciones */
+    section.blk{padding:44px 0}
+    .blk h2.title{font-size:1.5rem}
+    .blk p.intro{font-size:.98rem}
+    .benefits{gap:12px}
+    .bcard{padding:20px 18px}
+
+    /* barra de confianza en 2 columnas */
+    .trust .wrap{gap:12px 14px;justify-content:flex-start}
+    .trust .t{width:calc(50% - 7px);font-size:.82rem}
+
+    /* oferta / testimonios / garantía */
+    .cov-panel{padding:28px 22px}
+    .cov-panel .big{font-size:2.4rem}
+    .guarantee{padding:22px 20px}
+
+    /* CTA final */
+    .final .wrap{padding:50px 20px}
+    .final h2{font-size:1.65rem}
+    .final p{font-size:1rem}
+    .final .fcta{width:100%;justify-content:center}
+
+    /* footer */
+    footer .wrap{flex-direction:column;gap:16px;align-items:flex-start}
+
+    /* promo */
+    .promo{font-size:.78rem;padding:8px 14px}
+  }
 </style>
 
 <div class="promo">
